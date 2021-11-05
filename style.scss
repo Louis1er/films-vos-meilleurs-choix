@@ -1,1 +1,37 @@
 @use 'partials/top-picks';
+@use 'partials/cartes';
+@use 'partials/variables';
+@use 'partials/mixins/text';
+@use "sass:color";
+$color : variables.$primary;
+
+
+body {
+    background: color.adjust(variables.$primary, $lightness: 5%);
+}
+
+.card {
+    margin:5px;
+    padding:5px;
+    background-color: variables.$primary;
+}
+
+.card__btn{
+@include text.small-cap;
+width:100%;
+border:none;
+padding-top:5px 0;
+background: color.adjust(variables.$primary, $lightness: 15%);
+color: color.complement(variables.$primary);
+}
+
+.card__btn:hover{
+    background: color.adjust(variables.$primary, $lightness: 25%);
+    }
+
+.top-picks{
+    color:white;
+}
+.top-picks__desc{
+    @include text.small-cap;
+}
